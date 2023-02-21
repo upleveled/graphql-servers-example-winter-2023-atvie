@@ -50,8 +50,9 @@ const typeDefs = gql`
 
   type Query {
     animals: [Animal]
+
     animal(id: ID!): Animal
-    # Fake logged in animal
+
     getLoggedInAnimalByFirstName(firstName: String!): Animal
   }
 
@@ -86,7 +87,6 @@ const resolvers = {
       return getAnimalById(parseInt(args.id));
     },
 
-    // Inside the resolvers Query Type
     getLoggedInAnimalByFirstName: async (
       parent: string,
       args: { firstName: string },
