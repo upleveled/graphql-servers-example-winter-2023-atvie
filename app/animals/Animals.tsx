@@ -35,7 +35,6 @@ export default function Animals() {
       <h1>Animals</h1>
 
       {data?.animals.map((animal: Animal) => {
-        console.log(`/images/${animal.id}-${animal.firstName.toLowerCase()}`);
         return (
           <div
             data-test-id={`animal-type-${animal.type}`}
