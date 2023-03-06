@@ -3,6 +3,11 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-}
 
-module.exports = nextConfig
+  webpack: (config) => {
+    config.externals = [...config.externals, 'bcrypt'];
+    return config;
+  },
+};
+
+module.exports = nextConfig;
